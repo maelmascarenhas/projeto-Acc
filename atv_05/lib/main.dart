@@ -2,13 +2,12 @@ import 'package:atv_05/HomeScreen.dart';
 import 'package:atv_05/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'ChatScreen.dart';
+import 'LoginScreen.dart';
+import 'CadastroScreen.dart';
 
-//import 'LoginScreen.dart';
-//import 'CadastroScreen.dart';
 
 void main() {
-  runApp(MyApp(
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,11 +15,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'OxiQArti',
+      title: 'OxeQArti',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: ChatScreen(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/cadastro': (context) => CadastroScreen(),
+        '/home': (context) => HomeScreen(),
+      },
     );
   }
 }
